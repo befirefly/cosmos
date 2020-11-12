@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/befirefly/cosmos/issues"
   },
-  "homepage": "https://github.com/befirefly/cosmos#readme"
+  "homepage": "https://github.com/befirefly/cosmos#readme",
+  "dependencies": {
+    "koa": "^2.13.0"
+  }
 }
