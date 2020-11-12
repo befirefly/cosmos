@@ -1,0 +1,19 @@
+{
+  "name": "cosmos",
+  "version": "1.0.0",
+  "description": "cosmos supports diffrent languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/befirefly/cosmos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/befirefly/cosmos/issues"
+  },
+  "homepage": "https://github.com/befirefly/cosmos#readme"
+}
