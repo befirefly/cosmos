@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>可视化图表</title>
+    <meta name="keywords" content="盈峰普惠" />
+    <meta name="description" content="盈峰普惠" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffa74d">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <style>
+        html,body{
+            min-height: 100%;
+            background-color: #ccc;
+        }
+        .chart_full{
+            width:100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="page page_list">
+    <canvas id="myChart" class="chart_full"></canvas>
+    <script src="../js/f2.min.js"></script>
+    <script>
+  //import F2 from '@antv/f2';
+
+const data = [{
+  assetType: '债券资产',
+  percent: 73.76,
+  const: 'const'
+}, {
+  assetType: '其他资产',
+  percent: 22.11,
+  const: 'const'
+}, {
+  assetType: '股票资产',
+  percent: 2.20,
+  const: 'const'
+}, {
+  assetType: '现金资产',
+  percent: 1.93,
+  const: 'const'
+}];
+
+const colorMap = {
+  债券资产: '#1890FF',
+  其他资产: '#2FC25B',
+  股票资产: '#FACC14',
+  现金资产: '#F04864'
+};
+// 设置图例项的内容
+const legendItems = [];
+data.forEach(function(obj) {
+  const item = {
+    name: obj.assetType,
+    value: '    ' + obj.percent + '%',
+    marker: {
+      symbol: 'square',
+      fill: colorMap[obj.assetType],
+      radius: 14
+    }
+  };
+  legendItems.push(item);
+});
+
+const chart = new F2.Chart({
+  id: 'myChart',
+  pixelRatio: window.devicePixelRatio
+});
+chart.source(data, {
+  percent: {
+    formatter: function formatter(val) {
+      return val + '%';
+    }
+  }
+});
+chart.coord('polar', {
+  transposed: true,
+  radius: 0.85
+});
+chart.legend({
+  position: 'right',
+  custom: true,
+  items: legendItems,
+  nameStyle: {
+    fill: '#808080',
+    fontWeight:'bold',
+    fontSize:16
+  }, // 图例项 key 值文本样式
+  valueStyle: {
+    fill: '#333',
+    fontWeight: 'bold' // 图例项 value 值文本样式
+  },
+  marker:function(x, y, r, ctx) {
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = ctx.fillStyle;
+    ctx.moveTo(x - r - 3, y);
+    ctx.lineTo(x + r + 3, y);
+    ctx.stroke();
+    ctx.arc(x, y, r, 0, Math.PI * 2, false);
+    ctx.fill();
+  }
+});
+chart.axis(false);
+chart.interval()
+  .position('const*percent')
+  .color('assetType', function(val) {
+    return colorMap[val];
+  })
+  .adjust('stack')
+  .style({
+    lineWidth: 1,
+    stroke: '#fff'
+  });
+chart.render();
+    </script>
+</body>
+</html>

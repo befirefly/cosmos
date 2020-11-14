@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>可视化图表</title>
+    <meta name="keywords" content="盈峰普惠" />
+    <meta name="description" content="盈峰普惠" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffa74d">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <style>
+        html,body{
+            min-height: 100%;
+            background-color: #ccc;
+        }
+        div{
+            width:100%;
+            background-color: #fff;
+        }
+        .container { 
+		    display: inline-block;
+		    position: relative;
+		    width: 120px;
+		    height: 120px;
+		    vertical-align: middle; 
+		    background-color: green;
+
+		    overflow: hidden; 
+		}
+		.container2 { 
+			width: 160px;
+		    height: 160px;
+		}
+		.container3 { 
+			width: 100%;
+		    height: 80%;
+		}
+		svg{
+			background-color: yellow;
+		}
+
+        .fixed{
+        	position: fixed;
+        	top:0px;
+        	bottom:64px;
+        	left:0px;
+        	right:0px;
+        	background-color: red;
+        }
+        .nav{
+        	position: fixed;
+        	bottom:0px;
+        	height: 64px;
+        	background-color: blue;
+        	left:0px;
+        	right:0px;
+        }
+
+        .line1 { stroke: #333; fill:none; }
+        .line2 { stroke: #f00; fill:none; }
+    </style>
+</head>
+
+<body class="page page_list">
+<div class="fixed">
+	<svg viewBox="0 0 120 120" preserveAspectRatio="xMinYMin meet" style="border:1px solid #cd0000; width: 100%;height: 100%;">
+        <circle  cx="10" cy="10" r="3"/>
+        <circle  cx="20" cy="10" r="3"/>
+        <circle  cx="30" cy="10" r="3"/>
+        <circle  cx="40" cy="10" r="3"/>
+        <circle  cx="50" cy="10" r="3"/>
+        <circle  cx="60" cy="10" r="3"/>
+        <circle  cx="70" cy="10" r="3"/>
+        <circle  cx="80" cy="10" r="3"/>
+        <circle  cx="90" cy="10" r="3"/>
+        <circle  cx="100" cy="10" r="3"/>
+        <circle  cx="110" cy="10" r="3"/>
+
+	    <path class="line1" d="M 10,110 L20,90 L30,100 L40,80 L50,90 L60,75 L70,52 L80,32 L90,42 L100,52  L110,32"/>
+        <path class="line2" d="M 10,120 L20,110 L30,110 L40,90 L50,100 L60,75 L80,52 L80,52 L90,52 L100,72  L110,52"/>
+	</svg>
+</div>
+<div class="nav"></div>
+</div>
+</body>
+</html>

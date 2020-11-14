@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dropdown with Web Components</title>
+  </head>
+  <body>
+    <road-button
+      label="Dropdown"
+      option="option2"
+      options='{ "option1": { "label": "Option 1" }, "option2": { "label": "Option 2" } }'
+    ></road-button>
+
+    <script src="./comp.js"></script>
+
+    <script>
+      //document.querySelector('road-dropdown').options = {
+      //  option1: { label: 'Option 1' },
+      //  option2: { label: 'Option 2' },
+      //};
+
+      document
+        .querySelector('road-button')
+        .addEventListener('onClick', function(e){
+          console.log("e",e,e.detail);
+        });
+    </script>
+  </body>
+</html>

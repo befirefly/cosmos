@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dropdown with Web Components</title>
+    <style>
+        html,body{
+            min-height: 100%;
+            background-color: #ccc;
+        }
+        div{
+            width:100%;
+            background-color: #fff;
+        }
+        .container { 
+        display: inline-block;
+        position: relative;
+        width: 120px;
+        height: 120px;
+        vertical-align: middle; 
+        background-color: green;
+
+        overflow: hidden; 
+    }
+    .container2 { 
+      width: 160px;
+        height: 160px;
+    }
+    .container3 { 
+      width: 100%;
+        height: 80%;
+    }
+  
+
+    .fixed{
+      position: fixed;
+      top:0px;
+      bottom:64px;
+      left:0px;
+      right:0px;
+      background-color: red;
+    }
+    .nav{
+      position: fixed;
+      bottom:0px;
+      height: 64px;
+      background-color: blue;
+      left:0px;
+      right:0px;
+    }
+
+    #chart1::shadow #path1{
+           stroke: #006600;
+           border:3px solid #000;
+    }
+    #chart1::shadow #path2{
+           stroke: #006600;
+           border:3px solid #000;
+    }
+
+    #chart1::shadow .path3{
+           fill:green;
+    }
+    #chart1 /deep/ #path1{
+           fill:red;
+    }
+
+
+
+
+    firefly-pie {
+      --user-card-field-color: green;
+      --user-card-field1-color: green;
+      --user-card-field2-color: green;
+    }
+
+    #chart1{
+      --user-card-field1-color: blue;
+      --user-card-field2-color: green;
+      --user-card-field3-color: red;
+      --user-card-field4-color: black;
+
+    }
+
+  #chart1::part(style1) {
+    fill: pink;
+  }
+  #chart1::part(style):hover{
+    fill: #ffffff;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="fixed">
+    <firefly-pie id="chart1" class="chart1" title="Dropdown" data="0 15,15 75,75 190,190 360" colors="green,red,blue,yellow">
+    </firefly-pie>
+  </div>
+  <div class="nav"></div>
+
+    <script src="./svg7.js"></script>
+
+    <script>
+      //document.querySelector('road-dropdown').options = {
+      //  option1: { label: 'Option 1' },
+      //  option2: { label: 'Option 2' },
+      //};
+
+      document
+        .querySelector('firefly-pie')
+        .addEventListener('onClick', function(e){
+          console.log("e",e,e.detail);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>可视化图表</title>
+    <meta name="keywords" content="盈峰普惠" />
+    <meta name="description" content="盈峰普惠" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffa74d">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <style>
+        html,body{
+            min-height: 100%;
+            background-color: #ccc;
+        }
+        div{
+            width:100%;
+            background-color: #fff;
+        }
+        .container { 
+		    display: inline-block;
+		    position: relative;
+		    width: 120px;
+		    height: 120px;
+		    vertical-align: middle; 
+		    background-color: #fff;
+
+		    overflow: hidden; 
+		}
+		.container2 { 
+			width: 160px;
+		    height: 160px;
+		}
+		.container3 { 
+			width: 100%;
+		    height: 80%;
+		}
+		svg{
+			background-color: #fff;
+		}
+
+        .fixed{
+        	position: fixed;
+        	top:0px;
+        	bottom:0px;
+        	left:0px;
+        	right:0px;
+        	background-color: #333;
+        }
+        .nav{
+        	position: fixed;
+        	bottom:0px;
+        	height: 64px;
+        	background-color: blue;
+        	left:0px;
+        	right:0px;
+        }
+        line{
+            stroke: #c7c7c7;
+            stroke-width:0.5; 
+            fill:none;
+            stroke-dasharray: 4;
+            stroke-dashoffset: 0;
+        }
+        svg .hline  line:nth-child(2n){
+            stroke: #d7d7d7;
+            stroke-dashoffset: 4;
+        }
+        svg .hline  line:last-child{
+            stroke: #333;
+            stroke-dasharray: 0;
+            stroke-dashoffset: 0;
+        }
+        svg line.solid{
+            stroke: #333;
+            stroke-dasharray: 0;
+            stroke-dashoffset: 0;
+        }
+
+
+        path { stroke: #333;stroke-width:1.5; fill:none; }
+
+        .line { stroke: #74838f;}
+        .line1 { stroke: #f2a86f;}
+        .line2 { stroke: #ef8c8c;}
+        .line3 { stroke: #88bf4d;}
+
+        svg path:nth-child(1){
+            stroke: #74838f;
+        }
+        svg path:nth-child(2){
+            stroke: #f2a86f;
+        }
+        svg path:nth-child(3){
+            stroke: #ef8c8c;
+        }
+        svg path:nth-child(4){
+            stroke: #88bf4d;
+        }
+        .con{
+            margin: 0 auto;
+            height: 100%;
+            width: 960px;
+            height: 390px;
+            margin-top:30px;
+        }
+        svg line.guide{
+            stroke: #f00;
+            stroke-width:1.5;
+            stroke-dasharray: 0;
+            stroke-dashoffset: 0;
+        }
+
+        circle{
+            r:5;
+        }
+        .c1{
+            fill:#74838f;
+        }
+        .c2{
+            fill:#f2a86f;
+        }
+        .c3{
+            fill:#ef8c8c;
+        }
+        .c4{
+            fill:#88bf4d;
+        }
+
+        .guide_rect{display: none}
+
+        .hcoordinate text{
+            fill:red;
+            text-anchor :middle  ;
+        }
+    </style>
+</head>
+
+<body class="page page_list">
+<div class="fixed">
+    <div class="con">
+    	<svg viewBox="0 0 960 360" preserveAspectRatio="xMinYMin meet" style="width: 100%;height: 100%;">
+            <g class="hline">
+            </g>
+             <g class="vline"></g>
+             <g class="vcoordinate"></g>
+             <g class="hcoordinate"></g>
+
+             <g class="tooltip">
+                <circle class="c1" cx="30" cy="30" r="3"/>
+                <text x="40" y="35">全部</text>
+
+                <circle class="c2"   cx="30" cy="58" r="3"/>
+                <text x="40" y="63">消费金融</text>
+
+                <circle class="c3"   cx="30" cy="86" r="3"/>
+                <text x="40" y="91">同业金融</text>
+
+                <circle class="c4"   cx="30" cy="114" r="3"/>
+                <text x="40" y="119">供应链金融</text>
+             </g>
+
+
+    	    <path class="line"/>
+            <path class="line1"/>
+            <path class="line2"/>
+            <path class="line3"/>
+
+            <line class="guide" x1="0" y1="30" x2="0" y2="360"></line>
+            <text class="guide_date" x="140" y="20">2020-01-01</text>
+            <text class="guide_v" x="140" y="15"></text>
+            <text class="guide_v1" x="140" y="15"></text>
+            <text class="guide_v2" x="140" y="15"></text>
+            <text class="guide_v3" x="140" y="15"></text>
+            <rect class="guide_rect" x="10" y="35" width="100" height="20" fill="#cd0000"/>
+    	</svg>
+    </div>
+</div>
+<script src="./a1_data.js"></script>
+<script src="./a12.js"></script>
+</div>
+</body>
+</html>

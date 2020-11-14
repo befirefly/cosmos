@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>可视化图表</title>
+    <meta name="keywords" content="盈峰普惠" />
+    <meta name="description" content="盈峰普惠" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffa74d">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <style>
+        html,body{
+            min-height: 100%;
+            background-color: #ccc;
+        }
+        div{
+            width:100%;
+            background-color: #fff;
+        }
+        .container { 
+		    display: inline-block;
+		    position: relative;
+		    width: 120px;
+		    height: 120px;
+		    vertical-align: middle; 
+		    background-color: green;
+
+		    overflow: hidden; 
+		}
+		.container2 { 
+			width: 160px;
+		    height: 160px;
+		}
+		.container3 { 
+			width: 100%;
+		    height: 80%;
+		}
+		svg{
+			background-color: yellow;
+		}
+		circle {
+           stroke: #006600;
+           fill:   #00cc00;
+        }
+
+        .fixed{
+        	position: fixed;
+        	top:0px;
+        	bottom:64px;
+        	left:0px;
+        	right:0px;
+        	background-color: red;
+        }
+        .nav{
+        	position: fixed;
+        	bottom:0px;
+        	height: 64px;
+        	background-color: blue;
+        	left:0px;
+        	right:0px;
+        }
+    </style>
+</head>
+
+<body class="page page_list">
+<div class="fixed">
+	<svg viewBox="0 0 120 120" preserveAspectRatio="xMinYMin meet" style="border:1px solid #cd0000; width: 100%;height: 100%;">
+	    <rect x="10" y="10" width="100" height="100" fill="#cd0000"/>
+	     <circle  cx="40" cy="40" r="24"/>
+	</svg>
+</div>
+<div class="nav"></div>
+</div>
+</body>
+</html>
